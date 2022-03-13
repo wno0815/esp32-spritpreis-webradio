@@ -1,0 +1,29 @@
+{
+  "APIkey": "<YOUR TANKEKOENIG API KEY>",
+  "StationList": [
+    {
+      "uiname": "Jantzon Holle",
+	  "spname": "Jantzon",
+	  "spcity": "Holle",
+      "key": "3c034790-3d2a-4093-8417-032a48cb9f25"
+    },
+    {
+      "uiname": "HEM Groß Düngen",
+	  "spname": "Hem",
+	  "spcity": "Groß Düngen",
+      "key": "e1a15081-24c2-9107-e040-0b0a3dfe563c"
+    },
+    {
+      "uiname": "Jet Hi Ochtersum",
+	  "spname": "Jet",
+	  "spcity": "Hildesheim Ochtersum",
+      "key": "51d4b5e1-a095-1aa0-e100-80009459e03a"
+    },
+    {
+      "uiname": "ARAL Hildesheim",
+	  "spname": "Aral",
+	  "spcity": "Hildesheim, Alfelder Straße",
+      "key": "1a1ec4ba-cc2a-4663-8330-81efc48b9256"
+    }
+  ]
+}
