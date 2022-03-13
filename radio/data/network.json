@@ -1,0 +1,12 @@
+{
+  "NetworkList": [
+    {
+      "ssid": "<YOUR NETWORK SSID>",
+      "password": "<YOUR NETWORK PASSWORD>"
+    },
+    {
+      "ssid": "<other network>",
+      "password": "<other password>"
+    }
+  ]
+}
