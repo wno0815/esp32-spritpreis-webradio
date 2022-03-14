@@ -449,22 +449,38 @@ void Display::setFuelData(const char* stationName, const float priceDiesel, cons
 
 void Display::setFuelPrices(const float priceDiesel, const float priceSuper, const bool isOpen)
 {
+  char outbuf[6];
   if (currentPage == Pages::FUEL)
   {
     if (isOpen)
     {
-      Serial2.printf("priceDiesel.txt=\"%5.3f\"", priceDiesel);
+      sprintf(outbuf, "%5.3f", priceDiesel);
+      Serial2.printf("pDieselLast.txt=\"%c\"", outbuf[4]);
       endCommand();
-      Serial2.printf("priceSuper.txt=\"%5.3f\"", priceSuper);
+      outbuf[4] = 0;
+      Serial2.printf("priceDiesel.txt=\"%s\"", outbuf);
       endCommand();
+      
+      sprintf(outbuf, "%5.3f", priceSuper);
+      Serial2.printf("pSuperLast.txt=\"%c\"", outbuf[4]);
+      endCommand();
+      outbuf[4] = 0;
+      Serial2.printf("priceSuper.txt=\"%s\"", outbuf);
+      endCommand();
+
       DEB_PF("update fuel prices priceDiesel=%5.3f priceSuper=%5.3f\n", priceDiesel, priceSuper);
     }
     else
     {
-      Serial2.printf("priceDiesel.txt=\"----\"");
+      Serial2.printf("pDieselLast.txt=\" \"");
       endCommand();
-      Serial2.printf("priceSuper.txt=\"----\"");
+      Serial2.printf("priceDiesel.txt=\"---\"");
       endCommand();
+      Serial2.printf("pSuperLast.txt=\" \"");
+      endCommand();
+      Serial2.printf("priceSuper.txt=\"---\"");
+      endCommand();
+      
       DEB_PF("station closed; remove fuel prices\n");
     }
   }
